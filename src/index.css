@@ -1,0 +1,159 @@
+@import '@fontsource/cormorant/400.css';
+@import '@fontsource/cormorant/500.css';
+@import '@fontsource/cormorant/600.css';
+@import '@fontsource/cormorant/700.css';
+@import '@fontsource/eb-garamond/400.css';
+@import '@fontsource/eb-garamond/500.css';
+@import '@fontsource/eb-garamond/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased bg-dark-bg text-dark-text;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-cormorant text-dark-text;
+  }
+
+  p, a, span, div {
+    @apply font-garamond text-dark-text;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-none shadow-sm text-dark-bg bg-traditional-500 hover:bg-traditional-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-traditional-400 transition-colors duration-200 font-cormorant tracking-wider;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-traditional-500 text-base font-medium rounded-none text-traditional-300 hover:bg-traditional-500 hover:text-dark-bg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-traditional-400 transition-colors duration-200 font-cormorant tracking-wider;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-cormorant font-bold mb-6 tracking-wide text-dark-text;
+  }
+
+  .section-subtitle {
+    @apply text-xl md:text-2xl font-garamond text-dark-muted max-w-3xl mx-auto mb-8 leading-relaxed;
+  }
+
+  .card {
+    @apply bg-dark-surface border border-dark-border rounded-none shadow-custom hover:shadow-custom-lg transition-all duration-300;
+  }
+
+  .input-field {
+    @apply mt-1 block w-full rounded-none border-dark-border bg-dark-surface text-dark-text shadow-sm focus:border-traditional-500 focus:ring-traditional-400;
+  }
+
+  .input-label {
+    @apply block text-sm font-medium text-dark-muted;
+  }
+}
+
+.parallax-section {
+  @apply relative overflow-hidden;
+  transform-style: preserve-3d;
+}
+
+.fade-in {
+  @apply opacity-0 transition-opacity duration-1000;
+}
+
+.fade-in.visible {
+  @apply opacity-100;
+}
+
+/* Custom Grain Effect */
+.grain {
+  position: relative;
+}
+
+.grain::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+}
+
+/* Mandala Background Patterns */
+.mandala-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.mandala-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1598449356475-b9f71db7d847?q=80&w=2000&auto=format&fit=crop");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mandala-bg-right::before {
+  background-position: right center;
+  transform: scale(0.8);
+}
+
+.mandala-bg-left::before {
+  background-position: left center;
+  transform: scale(0.8);
+}
+
+.mandala-bg-large::before {
+  background-size: 120%;
+  opacity: 0.03;
+}
+
+.mandala-bg-small::before {
+  background-size: 60%;
+  opacity: 0.05;
+}
+
+.mandala-bg-rotate::before {
+  animation: rotate 120s linear infinite;
+}
+
+.mandala-bg-rotate-reverse::before {
+  animation: rotate-reverse 120s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
