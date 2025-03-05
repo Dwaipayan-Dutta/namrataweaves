@@ -29,13 +29,13 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
 
   // Set the first service as expanded by default
   const [expandedIndex, setExpandedIndex] = useState<number>(0);
-  
+
   // Progress state for the loading bar
   const [progress, setProgress] = useState<number>(0);
-  
+
   // Duration of auto-cycle in milliseconds
-  const cycleDuration = 12000;
-  
+  const cycleDuration = 5000;
+
   // Throttled function to prevent excessive rerenders
   const throttledSetExpandedIndex = useCallback((index: number) => {
     setExpandedIndex(index);
@@ -47,12 +47,12 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
     if (services.length > 1 && inView) {
       // Progress bar update interval (update every 100ms for smoothness)
       const progressInterval = setInterval(() => {
-        setProgress(prev => {
-          const newProgress = prev + (100 / (cycleDuration / 100));
+        setProgress((prev) => {
+          const newProgress = prev + 100 / (cycleDuration / 100);
           return newProgress > 100 ? 100 : newProgress;
         });
       }, 100);
-      
+
       // Only change service when progress reaches exactly 100%
       const checkProgressInterval = setInterval(() => {
         if (progress >= 99.9) {
@@ -65,42 +65,57 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
         clearInterval(checkProgressInterval);
       };
     }
-  }, [expandedIndex, services.length, inView, throttledSetExpandedIndex, progress]);
+  }, [
+    expandedIndex,
+    services.length,
+    inView,
+    throttledSetExpandedIndex,
+    progress,
+  ]);
 
   // Toggle expanded state - also resets the auto-cycle timer
-  const toggleExpand = useCallback((index: number) => {
-    if (index !== expandedIndex) {
-      throttledSetExpandedIndex(index);
-    }
-  }, [expandedIndex, throttledSetExpandedIndex]);
+  const toggleExpand = useCallback(
+    (index: number) => {
+      if (index !== expandedIndex) {
+        throttledSetExpandedIndex(index);
+      }
+    },
+    [expandedIndex, throttledSetExpandedIndex]
+  );
 
   // Memoize the service card animations to prevent unnecessary recalculations
-  const serviceCardVariants = useMemo(() => ({
-    hidden: { opacity: 0, y: 20 },
-    visible: (index: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        delay: index * 0.15,
-        ease: "easeOut",
-      },
+  const serviceCardVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0, y: 20 },
+      visible: (index: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.6,
+          delay: index * 0.15,
+          ease: "easeOut",
+        },
+      }),
     }),
-  }), []);
+    []
+  );
 
   // Memoize the sub-service card animations
-  const subServiceVariants = useMemo(() => ({
-    hidden: { opacity: 0, y: 10 },
-    visible: (index: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        delay: index * 0.08,
-        ease: "easeOut",
-      },
+  const subServiceVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0, y: 10 },
+      visible: (index: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.3,
+          delay: index * 0.08,
+          ease: "easeOut",
+        },
+      }),
     }),
-  }), []);
+    []
+  );
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 md:px-8 mt-5">
@@ -115,7 +130,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
             className="space-y-6 will-change-transform"
           >
             <div
-              className={`group cursor-pointer border-2 rounded-lg p-4 transition-all duration-300 ${
+              className={`group cursor-pointer border-2 rounded-lg p-1 transition-all duration-300 ${
                 expandedIndex === index
                   ? "border-woodbrown-100 shadow-md"
                   : "border-transparent hover:border-woodbrown-100/50"
@@ -132,7 +147,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
                 />
                 <div className="absolute inset-0 bg-woodblack/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center px-2 mb-2">
                 <h3 className="text-xl font-cormorant font-bold mb-2">
                   {service.title}
                 </h3>
@@ -153,14 +168,14 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
               </div>
-              <p className="font-garamond text-woodblack/80 leading-relaxed min-h-16">
+              <p className="font-garamond text-woodblack/80 leading-relaxed min-h-16 px-2 mb-3">
                 {service.description}
               </p>
             </div>
           </motion.div>
         ))}
       </div>
-      
+
       {/* Loading Progress Bar */}
       <div className="w-3/4 mx-auto h-1 bg-gray-400 rounded-full overflow-hidden my-12">
         <motion.div
@@ -180,9 +195,9 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="pt-6 border-t border-woodbrown-100/30"
+            className="pt-4 border-t border-woodbrown-100/30"
           >
-            <div className="flex justify-between items-center mb-8">
+            {/* <div className="flex justify-between items-center mb-8">
               <h4 className="text-2xl font-cormorant font-semibold">
                 {services[expandedIndex].title} Services
               </h4>
@@ -192,7 +207,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
               >
                 View All
               </a>
-            </div>
+            </div> */}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {services[expandedIndex].subServices
@@ -234,6 +249,15 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
                     </div>
                   </motion.div>
                 ))}
+            </div>
+
+            <div className="flex justify-center items-center">
+              <a
+                href={`/services#${services[expandedIndex].id}`}
+                className="px-10 py-2 mt-7 bg-woodbrown-100 text-white rounded hover:bg-woodbrown-200 transition-colors duration-300 font-medium"
+              >
+                View All
+              </a>
             </div>
           </motion.div>
         )}

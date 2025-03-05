@@ -525,7 +525,7 @@ const Home = () => {
       <section
         ref={aboutRef}
         id="about"
-        className="py-24 px-4 md:px-8 relative overflow-hidden mandala-bg mandala-bg-large mandala-bg-rotate"
+        className="py-24 px-4 md:px-8 relative overflow-hidden"
         style={{ zIndex: 1 }} // Ensure proper stacking
       >
         <div className="absolute inset-0 opacity-10" />
@@ -739,7 +739,7 @@ const Home = () => {
       <section
         ref={contactRef}
         id="contact"
-        className="py-24 px-4 md:px-8 mandala-bg mandala-bg-large mandala-bg-rotate"
+        className="py-24 px-4 md:px-8 mandala-bg mandala-bg-large"
       >
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
