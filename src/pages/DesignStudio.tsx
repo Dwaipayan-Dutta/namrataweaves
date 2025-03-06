@@ -61,7 +61,7 @@ const DesignStudio = () => {
   );
 
   return (
-    <div className="pt-16">
+    <div className="">
       {/* Hero Section */}
       <section className="relative h-[60vh] bg-gray-900">
         <img
@@ -93,7 +93,7 @@ const DesignStudio = () => {
               className={`px-6 py-2 rounded-full ${
                 selectedRegion === 'all'
                   ? 'bg-amber-600 text-white'
-                  : 'bg-gray-100 dark:bg-gray-800'
+                  : 'bg-gray-100 dark:bg-gray-800 text-woodbrown-700'
               }`}
             >
               All
@@ -103,7 +103,7 @@ const DesignStudio = () => {
               className={`px-6 py-2 rounded-full ${
                 selectedRegion === 'indian'
                   ? 'bg-amber-600 text-white'
-                  : 'bg-gray-100 dark:bg-gray-800'
+                  : 'bg-gray-100 dark:bg-gray-800 text-woodbrown-700'
               }`}
             >
               Indian
@@ -113,7 +113,7 @@ const DesignStudio = () => {
               className={`px-6 py-2 rounded-full ${
                 selectedRegion === 'caribbean'
                   ? 'bg-amber-600 text-white'
-                  : 'bg-gray-100 dark:bg-gray-800'
+                  : 'bg-gray-100 dark:bg-gray-800 text-woodbrown-700'
               }`}
             >
               Caribbean
@@ -123,7 +123,7 @@ const DesignStudio = () => {
               className={`px-6 py-2 rounded-full ${
                 selectedRegion === 'spanish'
                   ? 'bg-amber-600 text-white'
-                  : 'bg-gray-100 dark:bg-gray-800'
+                  : 'bg-gray-100 dark:bg-gray-800 text-woodbrown-700'
               }`}
             >
               Spanish

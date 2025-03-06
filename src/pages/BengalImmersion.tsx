@@ -1,6 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import videoSrc from "../assets/kolkata.mp4"; // Import your local video file
 
 const experiences = [
   {
@@ -30,7 +30,7 @@ const BengalImmersion = () => {
   });
 
   return (
-    <div className="pt-16">
+    <div className="">
       {/* Hero Section */}
       <section className="relative h-screen">
         <video
@@ -41,7 +41,7 @@ const BengalImmersion = () => {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source
-            src="https://player.vimeo.com/external/517090081.hd.mp4?s=0a48351b9a869365a8ee5cc6f5f5f52876b93c80&profile_id=175"
+            src={videoSrc}
             type="video/mp4"
           />
         </video>
@@ -72,7 +72,7 @@ const BengalImmersion = () => {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.8 }}
-        className="py-20 px-4 md:px-8 mandala-bg mandala-bg-large mandala-bg-rotate"
+        className="py-20 px-4 md:px-8 mandala-bg mandala-bg-large"
       >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">

@@ -1,20 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState, useCallback, useMemo } from "react";
-
-interface SubService {
-  title: string;
-  description: string;
-  image: string;
-}
-
-interface Service {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  subServices?: SubService[];
-}
+import { Service } from "../../types";
 
 interface ServiceGridProps {
   services: Service[];
@@ -177,9 +164,9 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
       </div>
 
       {/* Loading Progress Bar */}
-      <div className="w-3/4 mx-auto h-1 bg-gray-400 rounded-full overflow-hidden my-12">
+      <div className="w-3/4 mx-auto h-1 bg-gray-300 rounded-full overflow-hidden my-6">
         <motion.div
-          className="h-full bg-woodbrown-800"
+          className="h-full bg-woodbrown-300"
           initial={{ width: "0%" }}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.1, ease: "linear" }}
@@ -237,7 +224,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
                         {subService.description}
                       </p>
                       <button
-                        className="w-full py-3 bg-woodbrown-100 text-white rounded hover:bg-woodbrown-200 transition-colors duration-300 font-medium mt-2"
+                        className="w-full py-3 bg-woodbrown-100 text-black rounded hover:bg-woodbrown-200 transition-colors duration-300 font-medium mt-2"
                         onClick={(e) => {
                           e.stopPropagation();
                           // Add your buy functionality here
@@ -254,7 +241,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
             <div className="flex justify-center items-center">
               <a
                 href={`/services#${services[expandedIndex].id}`}
-                className="px-10 py-2 mt-7 bg-woodbrown-100 text-white rounded hover:bg-woodbrown-200 transition-colors duration-300 font-medium"
+                className="px-10 py-2 mt-7 bg-woodbrown-100 text-woodbrown-700 rounded hover:bg-woodbrown-200 transition-colors duration-300 font-medium"
               >
                 View All
               </a>

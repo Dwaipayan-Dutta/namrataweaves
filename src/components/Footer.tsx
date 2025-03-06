@@ -4,7 +4,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark-surface2 text-dark-muted">
+    <footer className="bg-[#151515] text-dark-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main footer content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -215,7 +215,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Your email"
-                className="px-4 py-2 bg-dark-surface text-dark-muted border border-dark-border rounded-l-md focus:outline-none focus:ring-1 focus:ring-traditional-300"
+                className="px-4 py-2 bg-stone-800 text-dark-muted border border-dark-border rounded-l-md focus:outline-none focus:ring-1 focus:ring-traditional-300"
               />
               <button className="bg-traditional-300 text-dark-surface px-4 py-2 rounded-r-md hover:bg-traditional-400 transition-colors">
                 Subscribe

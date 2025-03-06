@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useForm } from 'react-hook-form';
@@ -24,12 +23,11 @@ const StylingConsultancy = () => {
   } = useForm<ConsultationForm>();
 
   const onSubmit = (data: ConsultationForm) => {
-    console.log(data);
-    // Handle form submission
+    console.log(data);    // Handle form submission
   };
 
   return (
-    <div className="pt-16">
+    <div className="">
       {/* Hero Section */}
       <section className="relative h-[60vh] bg-gray-900">
         <img

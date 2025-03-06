@@ -10,9 +10,9 @@ const Navbar = () => {
 
   const navLinks = [
     { path: '/', section: 'home', label: 'Home' },
-    { path: '/design-studio', section: 'design-studio', label: 'Design Studio' },
     { path: '/styling-consultancy', section: 'styling', label: 'Styling' },
     { path: '/bengal-immersion', section: 'bengal', label: 'Bengal Immersion' },
+    { path: '/design-studio', section: 'design-studio', label: 'Design Studio' },
     { path: '/about', section: 'about', label: 'About NW' },
     { path: '/contact', section: 'contact', label: 'Contact' },
   ];
