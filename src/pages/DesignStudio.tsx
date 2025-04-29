@@ -76,7 +76,7 @@ const DesignStudio = () => {
             transition={{ duration: 1 }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-4">Design Studio</h1>
+            <h1 className="text-5xl md:text-7xl font-bold mb-4">Boutique</h1>
             <p className="text-xl max-w-2xl mx-auto">
               Where tradition meets contemporary design
             </p>
@@ -85,7 +85,7 @@ const DesignStudio = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 px-4 md:px-8 mandala-bg mandala-bg-large mandala-bg-rotate">
+      <section className="py-12 px-4 md:px-8 mandala-bg mandala-bg-large">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-center space-x-4 mb-12">
             <button

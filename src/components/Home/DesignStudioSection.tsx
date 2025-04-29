@@ -24,7 +24,7 @@ const DesignStudioSection: React.FC<DesignStudioSectionProps> = ({ studioRef, st
             animate={studioControls}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="section-title">Design Studio</h2>
+            <h2 className="section-title">Boutique</h2>
             <p className="text-lg text-woodblack/80 mb-8 leading-relaxed">
               Welcome to our design sanctuary, where heritage meets
               innovation. In this creative space, master artisans work

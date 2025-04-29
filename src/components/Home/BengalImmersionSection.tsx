@@ -1,7 +1,8 @@
 import { motion, AnimationControls } from "framer-motion";
 import { Link } from "react-router-dom";
-import ServiceGrid from "./ServiceGrid";
+// import ServiceGrid from "./ServiceGrid";
 import { Ref } from "react";
+import ScrollVelocityMarquee from "../ScrollVelocityMarquee";
 
 interface BengalImmersionSectionProps {
   bengalRef: Ref<HTMLElement>;
@@ -10,6 +11,7 @@ interface BengalImmersionSectionProps {
   bengalImmersionServices: any[]; // Adjust type based on actual structure
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const BengalImmersionSection: React.FC<BengalImmersionSectionProps> = ({ bengalRef, bengalControls, bengalImmersionServices }) => {
   return (
     <section
@@ -61,7 +63,8 @@ const BengalImmersionSection: React.FC<BengalImmersionSectionProps> = ({ bengalR
           </motion.div>
         </div>
       </div>
-      <ServiceGrid services={bengalImmersionServices} />
+      {/* <ServiceGrid services={bengalImmersionServices} /> */}
+      <ScrollVelocityMarquee />
     </section>
   );
 };

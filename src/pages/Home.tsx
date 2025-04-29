@@ -5,15 +5,16 @@ import { useEffect } from "react";
 import HeroSection from "../components/Home/HeroSection";
 import DesignStudioSection from "../components/Home/DesignStudioSection";
 import StylingSection from "../components/Home/StylingSection";
-// import BengalImmersionSection from "../components/Home/BengalImmersionSection";
 
-import ServiceGrid from "../components/Home/ServiceGrid";
+// import ServiceGrid from "../components/Home/ServiceGrid";
 import {
-  bengalImmersionServices,
+  // bengalImmersionServices,
   designStudioServices,
   stylingServices,
-  featuredProducts,
+  // featuredProducts,
 } from "../data/services";
+import ScrollVelocityMarquee from "../components/ScrollVelocityMarquee";
+import ExperiencePlans from "../components/ExperiencePlans";
 
 const Home = () => {
   // Use animation controls for more reliable animations
@@ -101,16 +102,11 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-offwhite">
       <HeroSection heroRef={heroRef} heroControls={heroControls} />
-      <StylingSection
-        stylingRef={stylingRef}
-        stylingControls={stylingControls}
-        stylingServices={stylingServices}
-      />
       {/* Bengal Immersion Section */}
       <section
         ref={bengalRef}
         id="bengal"
-        className="py-24 bg-stone-700/60 mandala-bg mandala-bg-right mandala-bg-small"
+        className="pt-24 bg-stone-700/60 mandala-bg mandala-bg-right mandala-bg-small"
       >
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -156,31 +152,22 @@ const Home = () => {
             </motion.div>
           </div>
         </div>
-        <ServiceGrid services={bengalImmersionServices} />
+        <ScrollVelocityMarquee />
+        {/* <ServiceGrid services={bengalImmersionServices} /> */}
       </section>
+      <ExperiencePlans />
+
       <DesignStudioSection
         studioRef={studioRef}
         studioControls={studioControls}
         designStudioServices={designStudioServices}
       />
 
-      {/* <BengalImmersionSection
-        bengalRef={bengalRef}
-        bengalControls={bengalControls}
-        bengalImmersionServices={bengalImmersionServices}
-      /> */}
-
-      {/* <AboutSection
-        aboutRef={aboutRef}
-        aboutControls={aboutControls}
-        featuredRef={featuredRef}
-        featuredControls={featuredControls}
-        featuredProducts={featuredProducts}
+      <StylingSection
+        stylingRef={stylingRef}
+        stylingControls={stylingControls}
+        stylingServices={stylingServices}
       />
-      <ContactSection
-        contactRef={contactRef}
-        contactControls={contactControls}
-      /> */}
 
       {/* About NW Section */}
       <section
@@ -344,53 +331,6 @@ const Home = () => {
                 forward the legacy of Bengali craftsmanship with authenticity
                 and respect.
               </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={featuredControls}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="text-center mb-16">
-              <h2 className="section-title">Our Signature Offerings</h2>
-              <p className="text-lg md:text-xl font-garamond max-w-3xl mx-auto mb-8 leading-relaxed">
-                Experience the richness of Bengali heritage through our
-                thoughtfully curated collections and immersive experiences. Each
-                offering is a gateway to centuries of artistic tradition,
-                reimagined for contemporary appreciation.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              {featuredProducts.map((product, index) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={featuredControls}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  className="group"
-                >
-                  <div className="relative h-96 mb-6 overflow-hidden">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-woodblack/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </div>
-                  <h3 className="text-2xl font-cormorant font-bold mb-3">
-                    {product.title}
-                  </h3>
-                  <p className="font-garamond text-woodblack/80 mb-6 leading-relaxed">
-                    {product.description}
-                  </p>
-                  <Link to={product.link} className="btn-outline">
-                    Explore More
-                  </Link>
-                </motion.div>
-              ))}
             </div>
           </motion.div>
         </div>

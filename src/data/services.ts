@@ -2,19 +2,19 @@ import { Service, SubService, Product } from '../types';
 
 export const stylingSubServices: SubService[] = [
   {
-    title: "Personal Style Consultation",
-    description: "One-on-one sessions with our style experts to develop your personal aesthetic while incorporating Bengali design elements.",
-    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-4.0.3",
+    title: "Jamdani Saree",
+    description: "A handwoven masterpiece from Bengal, the Jamdani saree features intricate motifs that celebrate heritage and craftsmanship—perfect for formal and cultural occasions.",
+    image: "https://images.unsplash.com/photo-1612409768881-3cf5e0e69486?ixlib=rb-4.0.3",
   },
   {
-    title: "Event Styling",
-    description: "Complete styling services for special occasions that honor Bengali heritage with modern flair.",
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3",
+    title: "Baluchari Saree",
+    description: "Known for its mythological depictions woven in silk, the Baluchari saree adds a regal, storytelling element to your wardrobe—ideal for weddings and festivals.",
+    image: "https://images.unsplash.com/photo-1622452924886-06179d1b229b?ixlib=rb-4.0.3",
   },
   {
-    title: "Wardrobe Curation",
-    description: "Professional curation services to build a versatile wardrobe that bridges traditional Bengali style with contemporary fashion.",
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3",
+    title: "Tant Saree",
+    description: "Lightweight and breathable, the Tant saree is a staple of everyday Bengali elegance—great for both casual and semi-formal wear.",
+    image: "https://images.unsplash.com/photo-1572960427303-573b6c278779?ixlib=rb-4.0.3",
   },
 ];
 
@@ -38,6 +38,23 @@ export const bengalImmersionSubServices: SubService[] = [
 
 export const designStudioServices: Service[] = [
   {
+    id: "sarees",
+    title: "Sarees",
+    description: "Explore a curated collection of sarees that blend traditional Bengali craftsmanship with contemporary elegance, tailored to enhance your personal style.",
+    image: "https://images.unsplash.com/photo-1618354691234-c99e131f7b35?ixlib=rb-4.0.3",
+    subServices: stylingSubServices, // Update this if sub-services need to be specific to sarees
+  },
+  {
+    id: "mens-wear",
+    title: "Men's Wear",
+    description: "Elevate your wardrobe with exclusive men’s wear that merges heritage Bengali silhouettes with modern tailoring for every occasion.",
+    image: "https://images.unsplash.com/photo-1602810318383-f05f072f4c66?ixlib=rb-4.0.3",
+    subServices: stylingSubServices, // Update this if sub-services need to be specific to men’s wear
+  },
+];
+
+export const stylingServices: Service[] = [
+  {
     id: "custom-saree-design",
     title: "Custom Saree Design",
     description: "Collaborate with our artisans to create your own unique saree design, incorporating traditional Bengali motifs and contemporary elements.",
@@ -60,29 +77,6 @@ export const designStudioServices: Service[] = [
   },
 ];
 
-export const stylingServices: Service[] = [
-  {
-    id: "personal-style-consultation",
-    title: "Personal Style Consultation",
-    description: "One-on-one sessions with our style experts to develop your personal aesthetic while incorporating Bengali design elements.",
-    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-4.0.3",
-    subServices: stylingSubServices,
-  },
-  {
-    id: "wardrobe-curation",
-    title: "Wardrobe Curation",
-    description: "Professional curation services to build a versatile wardrobe that bridges traditional Bengali style with contemporary fashion.",
-    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-4.0.3",
-    subServices: stylingSubServices,
-  },
-  {
-    id: "occasion-styling",
-    title: "Occasion Styling",
-    description: "Expert styling advice for special events, ensuring you embody Bengali elegance while maintaining your personal style.",
-    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-4.0.3",
-    subServices: stylingSubServices,
-  },
-];
 
 export const bengalImmersionServices: Service[] = [
   {

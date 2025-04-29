@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -68,7 +67,7 @@ const About = () => {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.8 }}
-        className="py-20 px-4 md:px-8 mandala-bg mandala-bg-large mandala-bg-rotate"
+        className="py-20 px-4 md:px-8 mandala-bg mandala-bg-large"
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

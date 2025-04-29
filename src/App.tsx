@@ -7,18 +7,20 @@ import DesignStudio from './pages/DesignStudio';
 import StylingConsultancy from './pages/StylingConsultancy';
 import BengalImmersion from './pages/BengalImmersion';
 import Contact from './pages/Contact';
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
   document.title = "Namrata Weaves";
 
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <div className="min-h-screen bg-dark-bg text-dark-text">
         <Navbar />
         <main className="bg-dark-bg">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/design-studio" element={<DesignStudio />} />
+            <Route path="/boutique" element={<DesignStudio />} />
             <Route path="/styling-consultancy" element={<StylingConsultancy />} />
             <Route path="/bengal-immersion" element={<BengalImmersion />} />
             <Route path="/about" element={<About />} />
