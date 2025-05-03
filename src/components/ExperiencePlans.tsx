@@ -55,37 +55,37 @@ const PricingCard: React.FC<PlanProps> = ({
         ${recommended ? `scale-105 border-2 ${brown.border}` : "hover:scale-[1.02] border-gray-100"}`}
     >
       {recommended && (
-        <div className={`${brown.bg} py-1.5 text-center`}>
-          <p className="text-xs font-semibold text-white uppercase tracking-wider">Most Popular</p>
+        <div className={`${brown.bg} py-1 text-center`}>
+          <p className="text-xs md:text-sm font-semibold text-white uppercase tracking-wider">Most Popular</p>
         </div>
       )}
 
-      <div className="p-8 flex flex-col flex-grow">
+      <div className="p-6 md:p-8 flex flex-col flex-grow">
         <div className="flex items-center mb-4">
           {icon && <div className={`p-2 rounded-lg ${brown.light} mr-3`}>{icon}</div>}
           <div>
-            <h3 className="text-xl font-bold text-gray-900">{title}</h3>
-            {tagline && <p className={`text-sm ${brown.text} mt-1`}>{tagline}</p>}
+            <h3 className="text-lg md:text-xl font-bold text-gray-900">{title}</h3>
+            {tagline && <p className={`text-xs md:text-sm ${brown.text} mt-1`}>{tagline}</p>}
           </div>
         </div>
 
-        <div className="mt-6 flex items-baseline">
-          <span className="text-4xl font-extrabold tracking-tight text-gray-900">₹{price}</span>
-          <span className="ml-1 text-sm font-medium text-gray-500">/person</span>
+        <div className="mt-4 md:mt-6 flex items-baseline">
+          <span className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">₹{price}</span>
+          <span className="ml-1 text-xs md:text-sm font-medium text-gray-500">/person</span>
         </div>
 
-        <ul className="mt-8 space-y-4 flex-grow">
+        <ul className="mt-6 md:mt-8 space-y-3 md:space-y-4 flex-grow">
           {features.map((feature, index) => (
             <li key={index} className={`flex items-start p-2 rounded-lg ${feature.highlighted ? brown.highlight : ""}`}>
-              <svg className="w-5 h-5 text-amber-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-5 md:h-5 text-amber-700 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
-              <span className="ml-3 text-sm text-gray-700">{feature.text}</span>
+              <span className="ml-2 md:ml-3 text-sm text-gray-700">{feature.text}</span>
             </li>
           ))}
         </ul>
 
-        <button className={`mt-8 w-full py-3.5 px-4 rounded-xl text-white font-medium transition-all duration-300 ${brown.bg} ${brown.shadow} flex items-center justify-center`}>
+        <button className={`mt-6 md:mt-8 w-full py-3 px-4 rounded-xl text-white font-medium transition-all duration-300 ${brown.bg} ${brown.shadow} flex items-center justify-center text-sm md:text-base`}>
           {ctaText}
         </button>
       </div>
@@ -169,27 +169,27 @@ const ExperiencePlans: React.FC = () => {
   ];
 
   return (
-    <div className="py-20 px-6 bg-gradient-to-b from-amber-50 to-white">
+    <div className="py-16 px-4 sm:px-6 bg-gradient-to-b from-amber-50 to-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
-          <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold bg-amber-100 text-amber-800 mb-4">
+          {/* <span className="inline-block px-3 py-1 rounded-full text-xs md:text-sm font-semibold bg-amber-100 text-amber-800 mb-3 md:mb-4">
             Cultural Experiences
-          </span>
-          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">
+          </span> */}
+          <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
             Experience <span className="text-amber-700">Bengal</span> Like Never Before
           </h2>
-          <p className="mt-5 text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="mt-4 md:mt-5 text-sm md:text-xl text-gray-600 max-w-3xl mx-auto">
             Immerse yourself in Bengali culture and crafts with our curated packages. Every journey is thoughtfully crafted for authentic, unforgettable cultural immersion.
           </p>
         </div>
 
-        <div className="mt-8 flex justify-center">
+        <div className="mt-6 md:mt-8 flex justify-center">
           <div className="relative bg-white rounded-full p-1 flex shadow-sm border border-gray-200">
             <button
               onClick={() => setAnnualBilling(false)}
               className={`${
                 !annualBilling ? "bg-amber-800 text-white" : "bg-transparent text-gray-700"
-              } relative rounded-full py-2 px-6 text-sm font-medium focus:outline-none transition-colors duration-200`}
+              } relative rounded-full py-1.5 px-4 md:py-2 md:px-6 text-xs md:text-sm font-medium focus:outline-none transition-colors duration-200`}
             >
               Regular Price
             </button>
@@ -197,14 +197,14 @@ const ExperiencePlans: React.FC = () => {
               onClick={() => setAnnualBilling(true)}
               className={`${
                 annualBilling ? "bg-amber-800 text-white" : "bg-transparent text-gray-700"
-              } relative rounded-full py-2 px-6 text-sm font-medium focus:outline-none transition-colors duration-200`}
+              } relative rounded-full py-1.5 px-4 md:py-2 md:px-6 text-xs md:text-sm font-medium focus:outline-none transition-colors duration-200`}
             >
               Group Discount (10% Off)
             </button>
           </div>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {plans.map((plan, index) => (
             <div
               key={index}

@@ -13,7 +13,7 @@ function App() {
   document.title = "Namrata Weaves";
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='namrataweaves'>
     <ScrollToTop />
       <div className="min-h-screen bg-dark-bg text-dark-text">
         <Navbar />

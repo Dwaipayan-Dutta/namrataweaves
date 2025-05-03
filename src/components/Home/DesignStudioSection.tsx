@@ -18,7 +18,7 @@ const DesignStudioSection: React.FC<DesignStudioSectionProps> = ({ studioRef, st
       className="py-24 bg-woodbrown-300/30 mandala-bg mandala-bg-right mandala-bg-small"
     >
       <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={studioControls}
@@ -26,20 +26,7 @@ const DesignStudioSection: React.FC<DesignStudioSectionProps> = ({ studioRef, st
           >
             <h2 className="section-title">Boutique</h2>
             <p className="text-lg text-woodblack/80 mb-8 leading-relaxed">
-              Welcome to our design sanctuary, where heritage meets
-              innovation. In this creative space, master artisans work
-              alongside contemporary designers to create pieces that honor
-              Bengal's textile legacy. Our studio is a living testament to the
-              evolution of traditional craftsmanship, where centuries-old
-              techniques find new expression in modern design language.
-            </p>
-            <p className="text-lg text-woodblack/80 mb-8 leading-relaxed">
-              Each creation emerging from our studio tells a story of cultural
-              preservation and artistic innovation. We specialize in reviving
-              ancient weaving techniques, natural dyeing processes, and
-              intricate embroidery patterns, while incorporating sustainable
-              practices and contemporary design elements that speak to today's
-              aesthetic sensibilities.
+              Welcome to our design sanctuary, where heritage meets innovation. In this creative space, master artisans work alongside contemporary designers to create pieces that honor Bengal's textile legacy. Our studio is a living testament to the evolution of traditional craftsmanship, where centuries-old techniques find new expression in modern design language. Each creation emerging from our studio tells a story of cultural preservation and artistic innovation. We specialize in reviving ancient weaving techniques, natural dyeing processes, and intricate embroidery patterns, while incorporating sustainable practices and contemporary design elements that speak to today's aesthetic sensibilities.
             </p>
             <Link to="/design-studio" className="btn">
               View Our Collections
@@ -49,7 +36,7 @@ const DesignStudioSection: React.FC<DesignStudioSectionProps> = ({ studioRef, st
             initial={{ opacity: 0, x: 50 }}
             animate={studioControls}
             transition={{ duration: 0.8 }}
-            className="relative h-[600px] group"
+            className="relative h-[300px] md:h-[400px] lg:h-[450px] group"
           >
             <img
               src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3"

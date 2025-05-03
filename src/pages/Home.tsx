@@ -109,7 +109,7 @@ const Home = () => {
         className="pt-24 bg-stone-700/60 mandala-bg mandala-bg-right mandala-bg-small"
       >
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={bengalControls}
@@ -121,16 +121,13 @@ const Home = () => {
                 immersive cultural experiences. Our carefully curated programs
                 take you beyond the surface, connecting you with master
                 artisans, ancient traditions, and the vibrant culture that
-                inspires our work. Each program is thoughtfully designed to
-                create meaningful connections and lasting memories.
-              </p>
-              <p className="text-lg text-woodblack/80 mb-8 leading-relaxed">
-                From textile workshops in historic weaving villages to natural
-                dyeing sessions with traditional craftspeople, each experience
-                is designed to deepen your understanding and appreciation of
-                Bengali craftsmanship. Participate in the creation process,
-                learn ancestral techniques, and become part of the continuing
-                story of Bengal's artistic legacy.
+                inspires our work. From textile workshops in historic weaving
+                villages to natural dyeing sessions with traditional
+                craftspeople, each experience is designed to deepen your
+                understanding and appreciation of Bengali craftsmanship.
+                Participate in the creation process, learn ancestral techniques,
+                and become part of the continuing story of Bengal's artistic
+                legacy.
               </p>
               <Link to="/bengal-immersion" className="btn">
                 Explore Experiences
@@ -140,7 +137,7 @@ const Home = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={bengalControls}
               transition={{ duration: 0.8 }}
-              className="relative h-[600px] group"
+              className="relative h-[300px] md:h-[400px] lg:h-[450px] group"
             >
               <img
                 src="https://images.unsplash.com/photo-1524230659092-07f99a75c013?ixlib=rb-4.0.3"
@@ -153,8 +150,8 @@ const Home = () => {
           </div>
         </div>
         <ScrollVelocityMarquee />
-        {/* <ServiceGrid services={bengalImmersionServices} /> */}
       </section>
+
       <ExperiencePlans />
 
       <DesignStudioSection
